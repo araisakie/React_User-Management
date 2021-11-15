@@ -24,6 +24,10 @@ margin: 0 8px;
 color: #fff;
 font-weight: bold;
 font-size: 25px;
-text-shadow: 4px 3px 3px #FF4F02; 
+text-shadow: 4px 3px 3px #FF4F02;
+&:hover {
+    color: #FF8C00;
+    text-shadow: 4px 3px 3px #FFF;
+}
 `
 
