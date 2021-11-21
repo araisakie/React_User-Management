@@ -7,19 +7,16 @@ import { SecondaryButton } from "../component/atoms/button/SecondaryButton";
 
 export const SignUp = () => {
   const history = useHistory();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
+  const [telephone, setTelephone] = useState("");
 
   const onClickSave = () => {
     history.push("/");
   };
 
-  const onClickCancel = () => {
-    history.goBack();
-  };
-
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [age, setAge] = useState("");
-  const [telephone, setTelephone] = useState("");
+  const onClickCancel = () => history.goBack();
 
   const onChangeName = (e) => setName(e.target.value);
   const onChangeEmail = (e) => setEmail(e.target.value);
