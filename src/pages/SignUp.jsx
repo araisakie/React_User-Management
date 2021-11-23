@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { Button } from "../component/atoms/button/Button";
 import { SecondaryButton } from "../component/atoms/button/SecondaryButton";
+import { Layout } from "../component/layout/Layout";
 
 export const SignUp = () => {
   const history = useHistory();
@@ -24,57 +25,59 @@ export const SignUp = () => {
   const onChangeTelephone = (e) => setTelephone(e.target.value);
 
   return (
-    <SMain>
-      <SH2>SIGN UP</SH2>
-      <div>
+    <Layout>
+      <SMain>
+        <SH2>SIGN UP</SH2>
         <div>
-          <SLabel>名前</SLabel>
-          <SInput
-            type="text"
-            name="name"
-            id="name"
-            value={name}
-            onChange={onChangeName}
-            placeholder="名前を入力してください"
-          />
+          <div>
+            <SLabel>名前</SLabel>
+            <SInput
+              type="text"
+              name="name"
+              id="name"
+              value={name}
+              onChange={onChangeName}
+              placeholder="名前を入力してください"
+            />
+          </div>
+          <div>
+            <SLabel>メールアドレス</SLabel>
+            <SInput
+              type="text"
+              name="email"
+              id="email"
+              value={email}
+              onChange={onChangeEmail}
+              placeholder="メールアドレスを入力してください"
+            />
+          </div>
+          <div>
+            <SLabel>年齢</SLabel>
+            <SInput
+              type="number"
+              name="age"
+              id="age"
+              value={age}
+              onChange={onChangeAge}
+              placeholder="年齢を入力してください"
+            />
+          </div>
+          <div>
+            <SLabel>電話番号</SLabel>
+            <SInput
+              type="number"
+              name="telephone"
+              id="telephone"
+              value={telephone}
+              onChange={onChangeTelephone}
+              placeholder="電話番号を入力してください"
+            />
+          </div>
+          <SecondaryButton onClick={onClickSave}>保存</SecondaryButton>
+          <Button onClick={onClickCancel}>キャンセル</Button>
         </div>
-        <div>
-          <SLabel>メールアドレス</SLabel>
-          <SInput
-            type="text"
-            name="email"
-            id="email"
-            value={email}
-            onChange={onChangeEmail}
-            placeholder="メールアドレスを入力してください"
-          />
-        </div>
-        <div>
-          <SLabel>年齢</SLabel>
-          <SInput
-            type="number"
-            name="age"
-            id="age"
-            value={age}
-            onChange={onChangeAge}
-            placeholder="年齢を入力してください"
-          />
-        </div>
-        <div>
-          <SLabel>電話番号</SLabel>
-          <SInput
-            type="number"
-            name="telephone"
-            id="telephone"
-            value={telephone}
-            onChange={onChangeTelephone}
-            placeholder="電話番号を入力してください"
-          />
-        </div>
-        <SecondaryButton onClick={onClickSave}>保存</SecondaryButton>
-        <Button onClick={onClickCancel}>キャンセル</Button>
-      </div>
-    </SMain>
+      </SMain>
+    </Layout>
   );
 };
 
