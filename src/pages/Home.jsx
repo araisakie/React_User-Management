@@ -4,7 +4,7 @@ import { Layout } from "../component/layout/Layout";
 
 export const Home = () => {
   return (
-    <Layout>
+    <Layout showFooter>
       <SContainer>
         <SH2>USERS LIST</SH2>
       </SContainer>
