@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
+import { Layout } from "../component/layout/Layout";
+
 export const Home = () => {
   return (
-    <SContainer>
-      <SH2>USERS LIST</SH2>
-    </SContainer>
+    <Layout showFooter>
+      <SContainer>
+        <SH2>USERS LIST</SH2>
+      </SContainer>
+    </Layout>
   );
 };
 
