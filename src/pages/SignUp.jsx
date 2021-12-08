@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { Button } from "../component/atoms/button/Button";
 import { SecondaryButton } from "../component/atoms/button/SecondaryButton";
 import { Layout } from "../component/layout/Layout";
+import api from "../service/server";
 
 export const SignUp = () => {
   const history = useHistory();
@@ -13,11 +14,22 @@ export const SignUp = () => {
   const [age, setAge] = useState("");
   const [telephone, setTelephone] = useState("");
 
-  const onClickSave = () => {
-    history.push("/");
-  };
-
   const onClickCancel = () => history.goBack();
+
+  const onClickSave = async () => {
+    try {
+      const res = await api.post("/users", {
+        name: name,
+        email: email,
+        age: age,
+        telephone: telephone,
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      history.push("/");
+    }
+  };
 
   const onChangeName = (e) => setName(e.target.value);
   const onChangeEmail = (e) => setEmail(e.target.value);
@@ -25,7 +37,7 @@ export const SignUp = () => {
   const onChangeTelephone = (e) => setTelephone(e.target.value);
 
   return (
-    <Layout>
+    <Layout showFooter>
       <SMain>
         <SH2>SIGN UP</SH2>
         <div>
@@ -83,12 +95,14 @@ export const SignUp = () => {
 
 const SMain = styled.div`
   text-align: center;
+  padding-top: 150px;
 `;
 const SH2 = styled.h2`
   color: #daa520;
   font-weight: bold;
   font-size: 40px;
   text-shadow: 5px 3px 1px #ffd700;
+  padding-bottom: 50px;
 `;
 
 const SLabel = styled.label`
