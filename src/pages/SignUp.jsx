@@ -19,10 +19,10 @@ export const SignUp = () => {
   const onClickSave = async () => {
     try {
       const res = await api.post("/users", {
-        name: name,
-        email: email,
-        age: age,
-        telephone: telephone,
+        name,
+        email,
+        age,
+        telephone,
       });
     } catch (error) {
       console.log(error);
