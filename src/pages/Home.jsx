@@ -14,8 +14,8 @@ export const Home = () => {
       setUsers(res.data);
     };
     getUserData();
-  }, []);
-  console.log(users);
+  }, [users]);
+  // console.log(users);
 
   return (
     <Layout>
