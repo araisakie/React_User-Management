@@ -2,8 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import { Button } from "../component/atoms/button/Button";
-import { SecondaryButton } from "../component/atoms/button/SecondaryButton";
+import { Button, buttonStyleLists } from "../component/atoms/button/BaseButton";
 import { Layout } from "../component/layout/Layout";
 import api from "../service/server";
 
@@ -85,8 +84,12 @@ export const SignUp = () => {
               placeholder="電話番号を入力してください"
             />
           </div>
-          <SecondaryButton onClick={onClickSave}>保存</SecondaryButton>
-          <Button onClick={onClickCancel}>キャンセル</Button>
+          <Button styleType={"save"} onClick={onClickSave} child={"保存"} />
+          <Button
+            styleType={"cancel"}
+            onClick={onClickCancel}
+            child={"キャンセル"}
+          />
         </div>
       </SMain>
     </Layout>
