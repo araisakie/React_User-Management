@@ -32,9 +32,9 @@ const buttonStyleLists = {
 };
 
 export const Button = (props) => {
-  const { styleType, onClick, child } = props;
+  const { styleType, onClick, children } = props;
   const Component = buttonStyleLists[styleType] || buttonStyleLists.default;
-  return <Component onClick={onClick}>{child}</Component>;
+  return <Component onClick={onClick}>{children}</Component>;
 };
 
 export default Button;

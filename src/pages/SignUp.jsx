@@ -84,12 +84,12 @@ export const SignUp = () => {
               placeholder="電話番号を入力してください"
             />
           </div>
-          <Button styleType={"save"} onClick={onClickSave} child={"保存"} />
-          <Button
-            styleType={"cancel"}
-            onClick={onClickCancel}
-            child={"キャンセル"}
-          />
+          <Button styleType="save" onClick={onClickSave}>
+            削除
+          </Button>
+          <Button styleType="cancel" onClick={onClickCancel}>
+            キャンセル
+          </Button>
         </div>
       </SMain>
     </Layout>
