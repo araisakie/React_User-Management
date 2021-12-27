@@ -36,5 +36,3 @@ export const Button = (props) => {
   const Component = buttonStyleLists[styleType] || buttonStyleLists.default;
   return <Component onClick={onClick}>{children}</Component>;
 };
-
-export default Button;
