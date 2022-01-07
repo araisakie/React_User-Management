@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 export const BaseButton = styled.button`
   width: 150px;
@@ -12,3 +13,26 @@ export const BaseButton = styled.button`
     cursor: pointer;
   }
 `;
+
+const CancelButton = styled(BaseButton)`
+  background: #cc0033;
+  color: #fff;
+`;
+
+const SaveButton = styled(BaseButton)`
+  background: #fff100;
+  color: #333;
+  margin-right: 20px;
+`;
+
+const buttonStyleLists = {
+  default: BaseButton,
+  cancel: CancelButton,
+  save: SaveButton,
+};
+
+export const Button = (props) => {
+  const { styleType, onClick, children } = props;
+  const Component = buttonStyleLists[styleType] || buttonStyleLists.default;
+  return <Component onClick={onClick}>{children}</Component>;
+};
